@@ -11,6 +11,7 @@ import {
   View,
   Text,
   TouchableOpacity,
+  Platform,
 } from 'react-native';
 
 const options = {
@@ -47,10 +48,12 @@ const Home = () => {
         // const source = { uri: 'data:image/jpeg;base64,' + response.data };
 
         setResponseData(response);
-        QRreader(response.uri).then(data => {
-          console.log('data', data);
-          setNewData(data);
-        });
+        QRreader(Platform.OS === 'ios' ? response.uri : response.path).then(
+          data => {
+            console.log('data', data);
+            setNewData(data);
+          },
+        );
       }
     });
   };
