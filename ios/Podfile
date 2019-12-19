@@ -34,8 +34,6 @@ target 'nativetest' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  pod 'QrCode', :path => '../node_modules/react-native-qr-scanner/ios'
-
   pod 'react-native-camera', :path => '../node_modules/react-native-camera'
 
   target 'nativetestTests' do
