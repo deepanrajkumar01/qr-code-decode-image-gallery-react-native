@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ImagePicker from 'react-native-image-picker';
-import {QRreader} from 'react-native-qr-decode-image-camera';
+import {QRreader} from 'react-native-qr-scanner';
 
 import {
   SafeAreaView,
