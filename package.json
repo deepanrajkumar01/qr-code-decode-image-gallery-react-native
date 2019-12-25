@@ -14,7 +14,7 @@
     "react-native": "0.61.4",
     "react-native-camera": "git+https://git@github.com/react-native-community/react-native-camera.git",
     "react-native-image-picker": "^1.1.0",
-    "react-native-qr-decode-image-camera": "git+https://github.com/deepanrajkumar01/react-native-qr-scanner.git"
+    "react-native-qr-decode-image-camera": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",

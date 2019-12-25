@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ImagePicker from 'react-native-image-picker';
-import {QRreader} from 'react-native-qr-scanner';
+import {QRreader} from 'react-native-qr-decode-image-camera';
 
 import {
   SafeAreaView,
@@ -32,7 +32,7 @@ const Home = () => {
 
     // ==============
 
-    ImagePicker.showImagePicker(options, response => {
+    ImagePicker.launchImageLibrary(options, response => {
       console.log('Response = ', response.path);
 
       if (response.didCancel) {
@@ -62,6 +62,9 @@ const Home = () => {
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={styles.body}>
         <View style={styles.main}>
+        <View>
+          
+        </View>
           <View>
             <Text style={styles.labelText}>
               Image picker {open && '-' + open}
