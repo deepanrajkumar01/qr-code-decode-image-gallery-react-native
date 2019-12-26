@@ -23,7 +23,7 @@ const options = {
   },
 };
 
-const Home = () => {
+const Image = () => {
   const [open, setOpen] = useState('');
   const [responseData, setResponseData] = useState({});
   const [newData, setNewData] = useState('');
@@ -125,4 +125,4 @@ const styles = StyleSheet.create({
   btnNew: {},
 });
 
-export default Home;
+export default Image;
