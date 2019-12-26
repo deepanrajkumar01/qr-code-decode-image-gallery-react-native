@@ -5043,6 +5043,11 @@ react-native-qr-decode-image-camera@^1.0.0:
   dependencies:
     prop-types "15.5.10"
 
+react-native-vscode-settings@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/react-native-vscode-settings/-/react-native-vscode-settings-0.0.8.tgz#7e684f98ef88e8483ed1fa21ca43409db2171e69"
+  integrity sha512-BQK/VRXjjAmqoH6X2uQxSOL8YcUlc7iqWKGsdKI7vetWev2XIWL3Ltu7mLC5BUZ7SIpZcd69xsCZrIUAc6VJgw==
+
 react-native@0.61.4:
   version "0.61.4"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.61.4.tgz#9ec6e8a2aa8eac57143dcfa39115c7d9a139bc2c"

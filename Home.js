@@ -62,9 +62,7 @@ const Home = () => {
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={styles.body}>
         <View style={styles.main}>
-        <View>
-          
-        </View>
+          <View />
           <View>
             <Text style={styles.labelText}>
               Image picker {open && '-' + open}
