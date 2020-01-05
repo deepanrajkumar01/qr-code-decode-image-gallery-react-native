@@ -1,22 +1,26 @@
-import React from 'react';
-import {View, Text} from 'react-native';
-import {createAppContainer} from 'react-navigation';
-import {createStackNavigator} from 'react-navigation-stack';
+import React, {Component} from 'react';
+import {Text, StyleSheet, View} from 'react-native';
+import ScanQr from './Camera/ScanQr';
 
-class HomeScreen extends React.Component {
+export default class App extends Component {
   render() {
     return (
-      <View>
-        <Text>Home Screen</Text>
+      <View style={styles.mainContainer}>
+        <ScanQr />
       </View>
     );
   }
 }
 
-const App = createStackNavigator({
-  Home: {
-    screen: HomeScreen,
+const styles = StyleSheet.create({
+  mainStyle: {
+    backgroundColor: 'yellow',
+  },
+  mainContainer: {
+    flex: 1,
+  },
+  mainView: {
+    flex: 1,
+    backgroundColor: 'green',
   },
 });
-
-export default createAppContainer(App);
