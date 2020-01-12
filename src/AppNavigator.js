@@ -5,6 +5,7 @@ import App from './App';
 import Camera from './Camera/Camera';
 import ScanQr from './Camera/ScanQr';
 import Image from './Image';
+import CheckCamera from './Camera/CheckCamera';
 
 const AppNavigator = createStackNavigator(
   {
@@ -13,6 +14,7 @@ const AppNavigator = createStackNavigator(
     Image: Image,
     Camera: Camera,
     ScanQR: ScanQr,
+    CheckCamera: CheckCamera,
   },
   {
     initialRouteName: 'App',

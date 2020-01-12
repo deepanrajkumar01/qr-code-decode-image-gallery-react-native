@@ -17,6 +17,7 @@
     "react-native-camera": "^3.15.0",
     "react-native-gesture-handler": "^1.5.3",
     "react-native-image-picker": "^1.1.0",
+    "react-native-modal": "^11.5.3",
     "react-native-qr-decode-image-camera": "^1.0.2",
     "react-native-reanimated": "^1.4.0",
     "react-native-safe-area-context": "^0.6.2",

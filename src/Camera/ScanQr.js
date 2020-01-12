@@ -1,8 +1,11 @@
-import React from 'react';
-import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 import Camera from './Camera';
+import {NavigationActions} from 'react-navigation';
 
-const ScanQr = () => {
+const ScanQr = ({navigation}) => {
+  navigation.reset();
+  const [CameraData, setCameraData] = useState({});
   const styles = StyleSheet.create({
     container: {flex: 1},
     cameraContainer: {flex: 4},
@@ -11,6 +14,8 @@ const ScanQr = () => {
 
   const cameraScan = data => {
     console.log('data', data);
+    setCameraData(data);
+    navigation.navigate('Image');
   };
   return (
     <View style={styles.container}>
@@ -18,7 +23,9 @@ const ScanQr = () => {
         <Camera flashMode={false} scanData={cameraScan} />
       </View>
       <View style={styles.bottomContainer}>
-        <Text>Sample Text</Text>
+        <ScrollView>
+          <Text>{JSON.stringify(CameraData, null, 2)}</Text>
+        </ScrollView>
       </View>
     </View>
   );

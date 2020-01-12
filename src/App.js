@@ -23,6 +23,11 @@ const App = ({navigation}) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.buttonStyles}
+          onPress={() => navigation.navigate('CheckCamera')}>
+          <Text>CheckCamera</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.buttonStyles}
           onPress={() => navigation.navigate('ScanQR')}>
           <Text>Scan QR</Text>
         </TouchableOpacity>
