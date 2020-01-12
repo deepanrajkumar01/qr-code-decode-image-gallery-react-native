@@ -5094,10 +5094,10 @@ react-native-image-picker@^1.1.0:
   resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-1.1.0.tgz#c2a0523886edb4cf2cdc008ad0a71433142a4d53"
   integrity sha512-/KjHf4NNAjl6XM7FQuqvGDz1wB9sRdLf86+2yksLW/QTRR7CitX4TLCM8ZF9CX6Y0MsCTndkZia3zWE+nt/GiA==
 
-react-native-qr-decode-image-camera@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-qr-decode-image-camera/-/react-native-qr-decode-image-camera-1.0.0.tgz#a86c8c04f4feebd2444f7d3f04ab897ee2ee3da7"
-  integrity sha512-q/i5w6ibZ5Q11AOFDGIv3DyRGfqBLeme0sDCvbCa2iKhx/GRAgmFAJhZ4u6rpgIX/dsVb0CBl4MpOofO2UFNAQ==
+react-native-qr-decode-image-camera@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-qr-decode-image-camera/-/react-native-qr-decode-image-camera-1.0.2.tgz#6dbda3a38a1e51f3b4aff43f52f7c0ec849899e4"
+  integrity sha512-2CT2dWrVPreYKENxxG6oq1vhfiSpUWVgEXwBFTDTYjPZ0sWnXhQBp5mCUVkaQGVXvB5bfIFYULAnyJrS49fziA==
   dependencies:
     prop-types "15.5.10"
 
