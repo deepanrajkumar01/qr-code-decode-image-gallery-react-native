@@ -13,6 +13,7 @@ import Modal from 'react-native-modal';
 import {NavigationEvents} from 'react-navigation';
 
 const CheckCamera = ({navigation}) => {
+  const [cameraStatus, setCameraStatus] = useState(true);
   const [ScanData, setScanData] = useState({});
   const [RepeatScan, setRepeatScan] = useState(true);
   const [flashMode, setflashMode] = useState(false);
@@ -50,23 +51,26 @@ const CheckCamera = ({navigation}) => {
     <View style={styles.container}>
       <NavigationEvents onDidFocus={payload => resetData(payload)} />
       <View style={styles.container}>
-        <QRscanner
-          isRepeatScan={RepeatScan}
-          onRead={onRead}
-          flashMode={flashMode}
-          zoom={0}
-          isShowScanBar={false}
-          finderY={50}
-          hintText=""
-          renderBottomView={() => {}}
-          bottomHeight={0}
-          maskColor={'rgba(0, 0, 0, 0)'}
-          cornerBorderWidth={0}
-        />
+        <If condition={cameraStatus}>
+          <QRscanner
+            isRepeatScan={RepeatScan}
+            onRead={onRead}
+            flashMode={flashMode}
+            zoom={0}
+            isShowScanBar={false}
+            finderY={50}
+            hintText=""
+            renderBottomView={() => {}}
+            bottomHeight={0}
+            maskColor={'rgba(0, 0, 0, 0)'}
+            cornerBorderWidth={0}
+          />
+        </If>
       </View>
       <View style={styles.container}>
         <ScrollView>
           <Text>{JSON.stringify(ScanData, null, 2)}</Text>
+          <Text>Sample</Text>
         </ScrollView>
       </View>
       <Button title="Show modal" onPress={toggleModal} />

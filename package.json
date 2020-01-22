@@ -3,15 +3,16 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "start": "react-native start",
+    "start:android": "react-native run-android --port 8090",
+    "start:ios": "react-native run-ios --port 8090",
+    "start": "react-native start --port 8090",
     "test": "jest",
     "lint": "eslint .",
     "postinstall": "jetifier -r"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.5",
+    "babel-plugin-jsx-control-statements": "^4.0.0",
     "react": "16.9.0",
     "react-native": "0.61.4",
     "react-native-camera": "^3.15.0",
@@ -34,7 +35,6 @@
     "jest": "^24.9.0",
     "jetifier": "^1.6.5",
     "metro-react-native-babel-preset": "^0.56.0",
-    "react-native-vscode-settings": "^0.0.8",
     "react-test-renderer": "16.9.0"
   },
   "jest": {
