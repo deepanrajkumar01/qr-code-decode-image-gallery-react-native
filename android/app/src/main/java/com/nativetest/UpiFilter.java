@@ -10,5 +10,7 @@ public class UpiFilter extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upi_filter);
+        getIntent().getData();
+        System.out.println(getIntent().getData());
     }
 }

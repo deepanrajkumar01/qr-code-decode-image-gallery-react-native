@@ -1,8 +1,51 @@
-import React, {useState} from 'react';
-import {Text, StyleSheet, View, TouchableOpacity, Button} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {
+  Text,
+  StyleSheet,
+  View,
+  TouchableOpacity,
+  Button,
+  Platform,
+  Linking,
+} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 
 const App = ({navigation}) => {
   const [TestState, setTestState] = useState('default');
+  const [testData, setTestData] = useState(undefined);
+
+  useEffect(() => {
+    if (Platform.OS === 'android') {
+      Linking.getInitialURL().then(url => {
+        setTestData(url);
+        console.log('url', url);
+      });
+    } else {
+      Linking.addEventListener('url', handleOpenURL);
+    }
+    return () => {
+      Linking.removeEventListener('url', handleOpenURL);
+    };
+  });
+
+  // const nav = url => {
+  //   const {navigate} = navigation;
+  //   const route = url.replace(/.*?:\/\//g, '');
+  //   const id = route.match(/\/([^\/]+)\/?$/)[1];
+  //   const routeName = route.split('/')[0];
+
+  //   console.log('navigate', navigate);
+  //   console.log('route', route);
+  //   console.log('id', id);
+  //   console.log('routeName', routeName);
+  // };
+
+  const handleOpenURL = event => {
+    console.log('event', event);
+    const route = event.url.replace(/.*?:\/\//g, '');
+    console.log('route', route);
+  };
+
   const updateState = () => {
     setTestState('stateChanged');
     navigation.navigate('Home');
@@ -37,6 +80,9 @@ const App = ({navigation}) => {
       </View>
       <View style={styles.mainContainer}>
         <Text>{TestState}</Text>
+        <ScrollView>
+          <Text>{JSON.stringify(testData, null, 2)}</Text>
+        </ScrollView>
       </View>
     </>
   );
