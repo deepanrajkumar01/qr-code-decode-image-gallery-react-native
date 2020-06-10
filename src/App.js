@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 import {
   Text,
   StyleSheet,
@@ -7,24 +7,24 @@ import {
   Button,
   Platform,
   Linking,
-} from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
+} from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 
-const App = ({navigation}) => {
-  const [TestState, setTestState] = useState('default');
+const App = ({ navigation }) => {
+  const [TestState, setTestState] = useState("default");
   const [testData, setTestData] = useState(undefined);
 
   useEffect(() => {
-    if (Platform.OS === 'android') {
-      Linking.getInitialURL().then(url => {
+    if (Platform.OS === "android") {
+      Linking.getInitialURL().then((url) => {
         setTestData(url);
-        console.log('url', url);
+        console.log("url", url);
       });
     } else {
-      Linking.addEventListener('url', handleOpenURL);
+      Linking.addEventListener("url", handleOpenURL);
     }
     return () => {
-      Linking.removeEventListener('url', handleOpenURL);
+      Linking.removeEventListener("url", handleOpenURL);
     };
   });
 
@@ -40,18 +40,18 @@ const App = ({navigation}) => {
   //   console.log('routeName', routeName);
   // };
 
-  const handleOpenURL = event => {
-    console.log('event', event);
-    const route = event.url.replace(/.*?:\/\//g, '');
-    console.log('route', route);
+  const handleOpenURL = (event) => {
+    console.log("event", event);
+    const route = event.url.replace(/.*?:\/\//g, "");
+    console.log("route", route);
   };
 
   const updateState = () => {
-    setTestState('stateChanged');
-    navigation.navigate('Home');
+    setTestState("stateChanged");
+    navigation.navigate("Home");
   };
   const updateStateData = () => {
-    setTestState('stateChanged');
+    setTestState("stateChanged");
   };
   return (
     <>
@@ -61,17 +61,26 @@ const App = ({navigation}) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.buttonStyles}
-          onPress={() => navigation.navigate('Camera')}>
+          onPress={() => navigation.navigate("ImageUpload")}
+        >
+          <Text>Image Upload</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.buttonStyles}
+          onPress={() => navigation.navigate("Camera")}
+        >
           <Text>Camera Scan</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.buttonStyles}
-          onPress={() => navigation.navigate('CheckCamera')}>
+          onPress={() => navigation.navigate("CheckCamera")}
+        >
           <Text>CheckCamera</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.buttonStyles}
-          onPress={() => navigation.navigate('ScanQR')}>
+          onPress={() => navigation.navigate("ScanQR")}
+        >
           <Text>Scan QR</Text>
         </TouchableOpacity>
       </View>
@@ -90,21 +99,21 @@ const App = ({navigation}) => {
 
 const styles = StyleSheet.create({
   buttonStyles: {
-    backgroundColor: '#ccc',
+    backgroundColor: "#ccc",
     flex: 1,
     marginTop: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   mainStyle: {
-    backgroundColor: 'maroon',
+    backgroundColor: "maroon",
   },
   mainContainer: {
     flex: 1,
   },
   mainView: {
     flex: 1,
-    backgroundColor: 'green',
+    backgroundColor: "green",
   },
 });
 
