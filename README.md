@@ -1,18 +1,20 @@
-# qr-code-decode-image-gallery-react-native
-
+# Sample app - Qr camera Scan,Image upload data reader
 Decode qr data from images using react native. Can decode both android and IOS
+
+https://github.com/deepanrajkumar01/react-native-qr-decode-image-camera
 
 ### Setup
 
 `yarn install`
 
-#### For android 
+#### For android
 
 ```
 yarn jetify
 yarn start:android
 ```
-#### For ios 
+
+#### For ios
 
 ```
 cd ios
