@@ -4,7 +4,7 @@ import {QRscanner} from 'react-native-qr-decode-image-camera';
 
 const Camera = ({flashMode, scanData}) => {
   const onRead = res => {
-    // console.log(res);
+    console.log(res);
     scanData(res);
   };
   const styles = StyleSheet.create({
