@@ -83,11 +83,15 @@ const App = ({ navigation }) => {
         >
           <Text>Scan QR</Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.buttonStyles}
+          onPress={() => navigation.navigate("ScrollTab")}
+        >
+          <Text>Scroll Tab</Text>
+        </TouchableOpacity>
       </View>
-      <View style={styles.mainContainer}>
+      <View style={styles.subContainer}>
         <Button title="Change state" onPress={updateStateData} />
-      </View>
-      <View style={styles.mainContainer}>
         <Text>{TestState}</Text>
         <ScrollView>
           <Text>{JSON.stringify(testData, null, 2)}</Text>
@@ -109,6 +113,9 @@ const styles = StyleSheet.create({
     backgroundColor: "maroon",
   },
   mainContainer: {
+    flex: 3,
+  },
+  subContainer: {
     flex: 1,
   },
   mainView: {

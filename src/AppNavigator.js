@@ -7,6 +7,7 @@ import ScanQr from "./Camera/ScanQr";
 import Image from "./Image";
 import CheckCamera from "./Camera/CheckCamera";
 import ImageUpload from "./Upload/ImageUpload";
+import ScrollTab from "./ScrollTab/ScrollTab";
 
 const AppNavigator = createStackNavigator(
   {
@@ -17,6 +18,7 @@ const AppNavigator = createStackNavigator(
     Camera: Camera,
     ScanQR: ScanQr,
     CheckCamera: CheckCamera,
+    ScrollTab: ScrollTab,
   },
   {
     initialRouteName: "App",
