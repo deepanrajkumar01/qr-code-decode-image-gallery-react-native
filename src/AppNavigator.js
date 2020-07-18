@@ -23,7 +23,7 @@ const AppNavigator = createStackNavigator(
     Demo: Demo,
   },
   {
-    initialRouteName: "App",
+    initialRouteName: "Demo",
   }
 );
 
