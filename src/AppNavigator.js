@@ -9,6 +9,7 @@ import CheckCamera from "./Camera/CheckCamera";
 import ImageUpload from "./Upload/ImageUpload";
 import ScrollTab from "./ScrollTab/ScrollTab";
 import Demo from "./Demo/Demo";
+import ScrollVis from "./Demo/ScrollVis";
 
 const AppNavigator = createStackNavigator(
   {
@@ -20,7 +21,7 @@ const AppNavigator = createStackNavigator(
     ScanQR: ScanQr,
     CheckCamera: CheckCamera,
     ScrollTab: ScrollTab,
-    Demo: Demo,
+    Demo: ScrollVis,
   },
   {
     initialRouteName: "Demo",
