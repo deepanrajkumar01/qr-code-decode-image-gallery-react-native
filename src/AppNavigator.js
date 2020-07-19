@@ -24,7 +24,7 @@ const AppNavigator = createStackNavigator(
     Demo: ScrollVis,
   },
   {
-    initialRouteName: "Demo",
+    initialRouteName: "App",
   }
 );
 
