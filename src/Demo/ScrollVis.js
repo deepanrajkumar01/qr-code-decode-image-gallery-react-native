@@ -107,11 +107,26 @@ const ScrollVis = () => {
     return result;
   };
 
+  const sortBy = (points) =>
+    points.sort((a, b) => {
+      return a.id - b.id;
+    });
+
   useEffect(() => {
     if (listHeight) {
-      updateListHeight(listHeight);
+      updateListHeight(sortBy(listHeight));
     }
   }, [listHeight]);
+
+  useEffect(() => {
+    if (scrollId) {
+      flatListRef.scrollToIndex({
+        animated: true,
+        index: Number(scrollId),
+        viewPosition: 0,
+      });
+    }
+  }, [scrollId]);
 
   const scrollToSection = (id) => {
     setPillSelecction({ currentId: id });
@@ -128,7 +143,6 @@ const ScrollVis = () => {
     const { changed } = props;
     changed.map((data) => {
       if (data?.isViewable && data?.section?.id === scrollId) {
-        console.log("object", data);
         // setScrollId(Number(data?.section?.id));
         // setPillSelecction({ currentId: data?.section?.id });
         // flatListRef.scrollToIndex({
@@ -143,48 +157,22 @@ const ScrollVis = () => {
   const sectionListScroll = (props) => {
     const { nativeEvent } = props;
     const sectionHeight = listData;
+    console.log("listData", listData);
+    console.log("listHeight", listHeight);
+    console.log("object", nativeEvent.contentOffset.y);
     sectionHeight.forEach((each) => {
       if (disableScroll) {
         if (each.height - Math.trunc(nativeEvent.contentOffset.y) <= 0) {
-          setScrollId(Number(each?.id));
-          setPillSelecction({ currentId: each?.id });
-          flatListRef.scrollToIndex({
-            animated: true,
-            index: Number(each.id),
-            viewPosition: 0,
-          });
+          setScrollId(Number(each?.id + 1));
+          setPillSelecction({ currentId: each?.id + 1 });
         }
       }
-      // console.log(
-      //   "1",
-      //   each.id === 0
-      //     ? each.height - Math.trunc(nativeEvent.contentOffset.y)
-      //     : "NA",
-      //   "2",
-      //   each.id === 1
-      //     ? each.height - Math.trunc(nativeEvent.contentOffset.y)
-      //     : "NA",
-      //   "3",
-      //   each.id === 2
-      //     ? each.height - Math.trunc(nativeEvent.contentOffset.y)
-      //     : "NA",
-      //   "4",
-      //   each.id === 3
-      //     ? each.height - Math.trunc(nativeEvent.contentOffset.y)
-      //     : "NA",
-      //   "5",
-      //   each.id === 4
-      //     ? each.height - Math.trunc(nativeEvent.contentOffset.y)
-      //     : "NA",
-      //   "6",
-      //   each.id === 5
-      //     ? each.height - Math.trunc(nativeEvent.contentOffset.y)
-      //     : "NA",
-      //   "7",
-      //   each.id === 6
-      //     ? each.height - Math.trunc(nativeEvent.contentOffset.y)
-      //     : "NA"
-      // );
+      console.log(
+        each.id,
+        each.id === 0
+          ? each.height - Math.trunc(nativeEvent.contentOffset.y)
+          : "NA"
+      );
     });
   };
 
@@ -226,7 +214,7 @@ const ScrollVis = () => {
             : styles.sectionTitle
         }
       >
-        <Text>{title}</Text>
+        <Text style={{ height: 18 }}>{title}</Text>
       </TouchableOpacity>
     );
   };
@@ -298,6 +286,7 @@ const ScrollVis = () => {
         onViewableItemsChanged={onCheckViewableItems}
         onScroll={sectionListScroll}
         onTouchStart={() => setDisableScroll(true)}
+        stickySectionHeadersEnabled={false}
       />
     </View>
   );
