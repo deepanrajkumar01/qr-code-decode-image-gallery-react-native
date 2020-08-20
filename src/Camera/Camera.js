@@ -3,14 +3,13 @@ import { View, Text, Button } from "react-native";
 
 const styles = {
   viewContainer: {
-    padding: 10,
-    margin: 10,
+    marginTop: 20,
   },
 };
 
 const Camera = ({ navigation }) => {
   return (
-    <View style={styles.viewContainer}>
+    <View style={{ marginHorizontal: 20 }}>
       <View style={styles.viewContainer}>
         <Button
           style={{ margin: 10 }}

@@ -6,14 +6,13 @@ const styles = {
     flex: 1,
   },
   viewContainer: {
-    padding: 10,
-    margin: 10,
+    marginTop: 20,
   },
 };
 
 const Home = ({ navigation }) => {
   return (
-    <ScrollView style={styles.scrollContainer}>
+    <ScrollView style={{ marginHorizontal: 20 }}>
       <View style={styles.viewContainer}>
         <Button
           style={{ margin: 10 }}
