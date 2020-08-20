@@ -1,32 +1,37 @@
-import React, {useState} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-import {QRscanner} from 'react-native-qr-decode-image-camera';
+import React from "react";
+import { View, Text, Button } from "react-native";
 
-const Camera = ({flashMode, scanData}) => {
-  const onRead = res => {
-    console.log(res);
-    scanData(res);
-  };
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#000',
-    },
-  });
+const styles = {
+  viewContainer: {
+    padding: 10,
+    margin: 10,
+  },
+};
+
+const Camera = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <QRscanner
-        onRead={onRead}
-        flashMode={flashMode}
-        zoom={0}
-        isShowScanBar={false}
-        finderY={50}
-        hintText=""
-        renderBottomView={() => {}}
-        bottomHeight={0}
-        maskColor={'rgba(0, 0, 0, 0)'}
-        cornerBorderWidth={0}
-      />
+    <View style={styles.viewContainer}>
+      <View style={styles.viewContainer}>
+        <Button
+          style={{ margin: 10 }}
+          title="CheckCamera"
+          onPress={() => navigation.navigate("CheckCamera")}
+        />
+      </View>
+      <View style={styles.viewContainer}>
+        <Button
+          style={{ margin: 10 }}
+          title="CameraTest"
+          onPress={() => navigation.navigate("CameraTest")}
+        />
+      </View>
+      <View style={styles.viewContainer}>
+        <Button
+          style={{ margin: 10 }}
+          title="Go Back to Home"
+          onPress={() => navigation.navigate("Home")}
+        />
+      </View>
     </View>
   );
 };

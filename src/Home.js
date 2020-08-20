@@ -1,16 +1,48 @@
-import React from 'react';
-import {View, Text, Button} from 'react-native';
+import React from "react";
+import { View, Text, Button, ScrollView } from "react-native";
 
-const Home = ({navigation}) => {
+const styles = {
+  scrollContainer: {
+    flex: 1,
+  },
+  viewContainer: {
+    padding: 10,
+    margin: 10,
+  },
+};
+
+const Home = ({ navigation }) => {
   return (
-    <View>
-      <Text>Home</Text>
-      <Button
-        title="Go to Image"
-        onPress={() => navigation.navigate('Image')}
-      />
-      <Button title="Go to App" onPress={() => navigation.navigate('App')} />
-    </View>
+    <ScrollView style={styles.scrollContainer}>
+      <View style={styles.viewContainer}>
+        <Button
+          style={{ margin: 10 }}
+          title="Image upload"
+          onPress={() => navigation.navigate("Gallery")}
+        />
+      </View>
+      <View style={styles.viewContainer}>
+        <Button
+          style={{ margin: 10 }}
+          title="Camera Checks"
+          onPress={() => navigation.navigate("Camera")}
+        />
+      </View>
+      <View style={styles.viewContainer}>
+        <Button
+          style={{ margin: 10 }}
+          title="Scroll Tabs"
+          onPress={() => navigation.navigate("ScrollTabs")}
+        />
+      </View>
+      <View style={styles.viewContainer}>
+        <Button
+          style={{ margin: 10 }}
+          title="Tabs"
+          onPress={() => navigation.navigate("Tabs")}
+        />
+      </View>
+    </ScrollView>
   );
 };
 
