@@ -7,6 +7,7 @@ import ImageUpload from "./Upload/ImageUpload";
 import CheckCamera from "./Camera/CheckCamera";
 import CameraTest from "./Camera/CameraTest";
 import Camera from "./Camera/Camera";
+import RnQrScan from "./Camera/RnQrScan";
 import Demo from "./ScrollTab/Demo";
 import Tabs from "./Tabs/Tabs";
 
@@ -21,6 +22,7 @@ const App = () => {
         <Stack.Screen name="Camera" component={Camera} />
         <Stack.Screen name="CheckCamera" component={CheckCamera} />
         <Stack.Screen name="CameraTest" component={CameraTest} />
+        <Stack.Screen name="RnQrScan" component={RnQrScan} />
         <Stack.Screen name="ScrollTabs" component={Demo} />
         <Stack.Screen name="Tabs" component={Tabs} />
       </Stack.Navigator>

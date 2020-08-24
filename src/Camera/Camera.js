@@ -27,6 +27,13 @@ const Camera = ({ navigation }) => {
       <View style={styles.viewContainer}>
         <Button
           style={{ margin: 10 }}
+          title="Rn Qr Scan"
+          onPress={() => navigation.navigate("RnQrScan")}
+        />
+      </View>
+      <View style={styles.viewContainer}>
+        <Button
+          style={{ margin: 10 }}
           title="Go Back to Home"
           onPress={() => navigation.navigate("Home")}
         />
