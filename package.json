@@ -5,8 +5,8 @@
   "scripts": {
     "start:android": "react-native run-android",
     "start:ios": "react-native run-ios",
-    "android": "yarn install && yarn jetifier -r && react-native run-android",
-    "ios": "yarn install && cd ios && pod install && cd .. && react-native run-ios",
+    "android": "yarn install && react-native run-android",
+    "ios": "yarn install && react-native run-ios",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
