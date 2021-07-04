@@ -10,7 +10,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "postinstall": "jetifier -r && cd ios && pod install && cd .."
+    "postinstall": "jetifier -r"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
@@ -18,15 +18,15 @@
     "@react-navigation/stack": "5.4.0",
     "babel-plugin-jsx-control-statements": "^4.0.0",
     "react": "16.13.1",
-    "react-native": "0.61.5",
+    "react-native": "^0.64.2",
     "react-native-camera": "^3.15.1",
     "react-native-gesture-handler": "^1.7.0",
     "react-native-image-picker": "^1.1.0",
     "react-native-modal": "^11.5.3",
     "react-native-permissions": "^2.1.5",
-    "react-native-qr-decode-image-camera": "^1.0.2",
+    "react-native-qr-decode-image-camera": "^1.0.4",
     "react-native-qrcode-scanner": "^1.4.1",
-    "react-native-reanimated": "^1.13.0",
+    "react-native-reanimated": "^2.2.0",
     "react-native-safe-area-context": "^3.1.6",
     "react-native-screens": "^2.10.1"
   },
